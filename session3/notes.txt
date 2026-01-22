@@ -1,0 +1,30 @@
+JavaScript is a single threaded language.
+A thread can do one task at a time.
+Browser's javascript runtime === JS Engine + Web API's + Event Loop.
+Node.js JavaScript run time  === JS Engine + NodeJS Api's + event Loop.
+
+**Synchronous Blocking Example Code:
+
+console.log("Start);      -Synchronous Non-Blocking
+for(let i=0;i<100;i++) {
+    //Heavy computation       -Synchronous Blocking
+}
+console.log("End");        -Synchronous Non-Blocking
+
+
+setTimeout(callback, 2000);     -It makes the cpu to block some time(2s), but ean time cpu can execute another task
+
+
+**Asynchrounous Blocking Example Code:
+
+console.log("First");
+setTimeout(() => {
+    console.log("Hello");
+}, 5000);
+console.log("End");                # Output: First, End, Hello
+
+
+1. Synchrounous Blocking
+2. Synchronous Non-Blocking
+3. Asynchrounous Blocking
+4. Asynchrounous Non-Blocking
