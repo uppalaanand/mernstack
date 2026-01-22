@@ -28,3 +28,13 @@ console.log("End");                # Output: First, End, Hello
 2. Synchronous Non-Blocking
 3. Asynchrounous Blocking
 4. Asynchrounous Non-Blocking
+
+
+
+Afternoon sessoion 
+Backend Notes
+
+Backend Architecture 
+        -HTTP Server
+        -API's
+        -Database

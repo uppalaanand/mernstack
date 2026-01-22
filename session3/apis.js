@@ -14,3 +14,14 @@ async function name() {
 }
 
 name()
+
+
+{
+    userId: 1;
+    id: 7;
+    title: 'magnam facilis autem';
+    body: 'dolore placeat quibusdam ea quo vitae\n' +
+      'magni quis enim qui quis quo nemo aut saepe\n' +
+      'quidem repellat excepturi ut quia\n' +
+      'sunt ut sequi eos ea sed quas'
+}
