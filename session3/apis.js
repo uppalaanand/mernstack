@@ -7,6 +7,7 @@
 
 // name()
 
+
 async function name() {
     let res = await fetch("https://jsonplaceholder.typicode.com/posts");
     let data = await res.json();
