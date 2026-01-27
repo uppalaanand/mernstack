@@ -12,7 +12,7 @@ const products = [
                           
 export function getProductById(id) {
     // Find and return product by ID
-    let pro = products.find((product) => product.id === id);
+    let pro = products.find((product) => product.id === id) || null;
     return pro;
 }
                           
@@ -29,13 +29,13 @@ export function getProductsByCategory(category) {
                           
 export function searchProducts(query) {
     // Search products by name (case-insensitive)
-    let search = products.find((pro) => pro.name === query);
+    return products.filter((pro) => pro.name.toLowerCase().includes(query.toLowerCase()));
 }
                           
 export function checkStock(productId, quantity) {
     // Check if product has enough stock
-    let product = products.find((pro) => pro.productId === productId);
-    if(product.stock > quantity) {
+    let product = getProductById(productId);
+    if(product?.stock > quantity) {
         return true;
     }else{
         return false;
@@ -45,9 +45,8 @@ export function checkStock(productId, quantity) {
                           
 export function reduceStock(productId, quantity) {
     // Reduce product stock after purchase
-    products.map((pro) => {
-        if(pro.productId === productId) {
-            pro.stock = pro.stock - quantity;
-        }
-    });
+    let product = getProductById(productId);
+    if(product) {
+        product.stock -= quantity;
+    }
 }
