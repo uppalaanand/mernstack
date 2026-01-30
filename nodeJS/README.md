@@ -9,6 +9,9 @@
         
         b. Import express module
 
+        c. Install nodemon          --- Instent Restarts the server
+            npm i nodemon
+
 
 
 HTTP Req types
@@ -20,3 +23,14 @@ HTTP Req types
     https://    127.0.0.1   :3000
                     |       |
                 ip adrs     Port number
+
+
+session 2
+
+REST End point rules
+    Rule 1 : Use Nouns, Not Verbs
+        GET /users       --- Get All users
+        POST /users      
+        DELETE /users
+    Rule 2 : User lowercases Or 
+
