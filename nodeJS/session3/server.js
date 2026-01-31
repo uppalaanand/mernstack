@@ -25,3 +25,10 @@ connectDB();
 
 //Product apis
 app.use('/product-api', productApp)
+
+
+//error handler product by ObjectId
+function errorHandler(err, req, res, next) {
+    res.json({message: "error", reason: err.message})
+}
+app.use(errorHandler);
