@@ -1,1 +1,21 @@
-GET https://127.0.0.1:3000/users
+GET http://127.0.0.1:3000/user-api/users
+
+###
+POST http://localhost:3000/user-api/users
+Content-Type: application/json
+
+{
+  "username" : "John Doe",
+  "password" : "john@123",
+  "age" : 30
+}
+
+###
+PUT http://localhost:3000/user-api/users/
+Content-Type: application/json
+
+{
+  "user" : "John Doe Updated",
+  "password" : "john@1234",
+  "age" : 31
+}

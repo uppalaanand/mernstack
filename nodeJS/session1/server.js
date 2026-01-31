@@ -25,7 +25,7 @@ async function connectDB() {
 connectDB();
 
 
-app.use("/users", userApp);
+app.use("/user-api", userApp);
 // Create API's
 //GET Request handling routes
 app.get("/user", (req, res) => {   

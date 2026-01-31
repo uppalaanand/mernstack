@@ -1,0 +1,24 @@
+GET http://localhost:3000/product-api/products
+
+###
+POST http://localhost:3000/product-api/products
+Content-Type: application/json
+
+{
+    "pid" : 101,
+    "productName": "Laptop",
+    "price": 75000
+}
+
+###
+GET http://localhost:3000/product-api/products/697dd0c330c45908eef9b8c7
+
+###
+PUT http://localhost:3000/product-api/products/697dd0c330c45908eef9b8c7
+Content-Type: application/json
+
+{
+    "pid" : 101,
+    "productName": "Gaming Laptop",
+    "price": 85000
+}

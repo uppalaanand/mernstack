@@ -17,6 +17,8 @@ const userSchema = new Schema({
         min:[18, "Age should be above 18"],
         max: [25, "Age should be less than 25"]
     }
+}, {
+    strict:"throw"
 });
 
 export const User = model("user", userSchema);
