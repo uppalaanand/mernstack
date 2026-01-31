@@ -22,3 +22,35 @@ Content-Type: application/json
 ###
 DELETE http://localhost:3000/users/101
 
+
+###
+GET http://localhost:3000/products
+
+###
+GET http://localhost:3000/products/apple
+
+
+###
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "productId" : 201,
+    "name" : "laptop",
+    "price" : 5000,
+    "brand" : "apple"
+}
+
+###
+PUT http://localhost:3000/products/200
+Content-Type: application/json
+
+{
+    "productId" : 200,
+    "name" : "laptop",
+    "price" : 55000,
+    "brand" : "hp"
+}
+
+###
+DELETE http://localhost:3000/products/200
