@@ -1,13 +1,16 @@
 GET http://127.0.0.1:3000/user-api/users
 
 ###
+GET http://localhost:3000/user-api/users/69803cfc8eb5ef1c460f1214
+
+###
 POST http://localhost:3000/user-api/users
 Content-Type: application/json
 
 {
-  "username" : "John Doe",
+  "Username" : "John Doe",
   "password" : "john@123",
-  "age" : 30
+  "age" : 21
 }
 
 ###
@@ -18,4 +21,23 @@ Content-Type: application/json
   "user" : "John Doe Updated",
   "password" : "john@1234",
   "age" : 31
+}
+
+###
+POST http://localhost:3000/user-api/register
+Content-Type: application/json
+
+{
+  "Username" : "Jane Doe",
+  "password" : "123456789",
+  "age" : 25
+} 
+
+###
+POST http://localhost:3000/user-api/login
+Content-Type: application/json
+
+{
+  "Username" : "Jane Doe",
+  "password" : "123456789"
 }

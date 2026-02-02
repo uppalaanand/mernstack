@@ -4,8 +4,13 @@ import Express from 'express'
 import mongoose from 'mongoose';
 import { connect } from 'mongoose';
 import { userApp } from './apis/userAPI.js';
+import cookieParser from "cookie-parser";
 //Create Server
 const app = Express();
+
+//middleware
+app.use(Express.json());
+app.use(cookieParser());
 
 //Database Connection
 async function connectDB() {
@@ -26,20 +31,20 @@ connectDB();
 
 
 app.use("/user-api", userApp);
-// Create API's
-//GET Request handling routes
-app.get("/user", (req, res) => {   
-    res.json({message: "This is response from GET req bundle"});
-})
-//POST Request handling routes
-app.post("/user", (req, res) => {
-    res.json({message:"This response from POST req handler"});
-})
-//PUT Request handling routes
-app.put("/user/:id", (req, res) => {
-    res.json({message:"This response from PUT req handler"});
-})
-//DELETE Request handling routes
-app.delete("/user/:id", (req, res) => {
-    res.json({message:"This response from DELETE req handler"});
-})
+// // Create API's
+// //GET Request handling routes
+// app.get("/user", (req, res) => {   
+//     res.json({message: "This is response from GET req bundle"});
+// })
+// //POST Request handling routes
+// app.post("/user", (req, res) => {
+//     res.json({message:"This response from POST req handler"});
+// })
+// //PUT Request handling routes
+// app.put("/user/:id", (req, res) => {
+//     res.json({message:"This response from PUT req handler"});
+// })
+// //DELETE Request handling routes
+// app.delete("/user/:id", (req, res) => {
+//     res.json({message:"This response from DELETE req handler"});
+// })
