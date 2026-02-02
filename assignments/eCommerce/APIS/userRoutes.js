@@ -24,6 +24,6 @@ userApp.post('/register', async (req, res) => {
 userApp.put('/user-cart/userid/:userId/productid/:productId', async (req, res) => {
     let userId = req.params.userId;
     let productId = req.params.productId;
-    let updatedUser = await UserModel.findByIdAndUpdate(userId, {$push : {"product.cart" : productId}});
+    let updatedUser = await UserModel.findByIdAndUpdate(userId, {$push : {"cart" : { product : productId }}}, { new : true});
     res.status(200).json({message : "User Updated", updatedUser: updatedUser});
 })
