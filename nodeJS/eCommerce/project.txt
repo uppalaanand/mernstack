@@ -1,0 +1,16 @@
+                                           Blog App
+                                                |
+                                                |
+                                           Types of a Roles
+                                        /           |           \
+                                Auther              User           Admin
+                               |                    |                    \
+                        Registration               Registration            Login
+                        Login                      Login                   View Article
+                        Add Article                View Article            Block & Activate User
+                        View a Article             write comments
+                        Edit & Del Article
+
+
+                        Soft Delete
+

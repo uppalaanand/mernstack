@@ -13,11 +13,14 @@ Content-Type: application/json
 
 {
   "name": "John Doe",
-  "email": "testing1@gmail.com",
+  "email": "testing2@gmail.com",
   "password": "john@1234"
 }
 
 
 ###
-PUT http://localhost:3000/user-app/user-cart/userid/69807162aea36c92236df654/productid/69806950e6605751bd9da178
+PUT http://localhost:3000/user-app/user-cart/userId/69818b7e887b6966429e7a89/productId/69806950e6605751bd9da178
 
+
+### REad user by id
+GET http://localhost:3000/user-app/users/69807162aea36c92236df654

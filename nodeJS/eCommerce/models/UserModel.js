@@ -1,10 +1,22 @@
 import { Schema, model } from "mongoose";
 
+// //Create Cart Schema
+// const cartSchema = new Schema({
+//     product : {
+//         type : Schema.Types.ObjectId,
+//         ref : "product"                //name of product model
+//     }
+// })
+
 //Create Cart Schema
 const cartSchema = new Schema({
     product : {
         type : Schema.Types.ObjectId,
         ref : "product"                //name of product model
+    },
+    quantity : {
+        type : Number,
+        default : 1
     }
 })
 
