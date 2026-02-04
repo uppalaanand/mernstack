@@ -4,10 +4,12 @@ export const appp = Express.Router();
 
 let products = []
 
+//Get all the products
 appp.get('/products', (req, res) => {
     res.status(200).json({message : "Get All Products", payload : products});
 });
 
+//Get product by brand
 appp.get('/products/:brand', (req, res) => {
     let data = products.filter(product => {
         product.brand === req.params.brand
@@ -15,12 +17,14 @@ appp.get('/products/:brand', (req, res) => {
     res.status(200).json({message : "Product data", payload : data});
 })
 
+//Add new product
 appp.post('/products', (req, res) => {
     let product = req.body;
     products.push(product);
     res.status(201).json({message : "Product added successfully"});
 });
 
+//Get product by productId
 appp.put('/products/:productId', (req, res) => {
     let productId = req.params.productId;
     let modPro = req.body;
@@ -33,6 +37,7 @@ appp.put('/products/:productId', (req, res) => {
     res.status(200).json({message : "Product Updated", payload: products});
 });
 
+//Delate any product by productId
 appp.delete('products/:productId', (req, res) => {
     const productId = req.params.productId;
     console.log(productId);
