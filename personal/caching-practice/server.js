@@ -12,8 +12,22 @@ app.get('/', async (req, res) => {
     }
     const response = await axios("https://jsonplaceholder.typicode.com/todos");
     console.log("data from api");
-    await redisClient.setEx("apidata", 5, JSON.stringify(response.data));
+    await redisClient.setEx("apidata", 1000, JSON.stringify(response.data));
     res.json({message : "success", data : response.data});
+});
+
+app.get('/todos/:id', async (req, res) => {
+    const {id} = req.params;
+    const key = `todos:${id}`;
+    const cached = await redisClient.get(key);
+    if(cached) {
+        console.log("Data from Redis");
+        return res.json({source : "Redis", data : JSON.parse(cached)});
+    }
+    const response = await axios(`https://jsonplaceholder.typicode.com/todos/${id}`);
+    console.log("Data From Api");
+    await redisClient.setEx(key, 1000, JSON.stringify(response.data));
+    res.json({message : "Success", data : response.data});
 })
 
 app.listen(3000, () => {
